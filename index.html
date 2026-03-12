@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Human Data Ops — AI Trainer Opportunity Aggregator (500+ Listings)</title>
-<meta name="description" content="500+ AI trainer, annotator & evaluator listings across 41 companies. Resume matching & applicant repository."/>
+<title>Human Data Ops — AI Trainer Opportunities, Earnings Calculator & Resume Matching</title>
+<meta name="description" content="500+ AI trainer listings, earnings visualizer, resume matching, and platform comparison. See what AI training work can buy you."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -37,7 +37,7 @@ const {useState,useMemo,useEffect,useCallback,useRef} = React;
    • 14 medical specialties × medical platforms
    • Task types × annotation platforms
    ═══════════════════════════════════════════════════════════════ */
-
+ 
 // ── BASE DATA FOR GENERATION ──
 const LANGS=[
   "English","Spanish","French","German","Portuguese","Italian","Dutch","Russian","Polish","Turkish",
@@ -57,7 +57,7 @@ const LANG_GROUPS=[
   {name:"Slavic Languages",langs:["Russian","Polish","Czech","Ukrainian","Romanian","Hungarian"]},
   {name:"African Languages",langs:["Swahili","Yoruba","Zulu","Amharic"]},
 ];
-
+ 
 function gen(){
   const R=[];let id=0;
   // Last date each company's listings were verified against their live job board
@@ -78,7 +78,7 @@ function gen(){
     "Handshake AI":"2026-03-12","Hive AI":"2026-03-12","Pangram Labs":"2026-03-12",
   };
   const a=(co,role,dom,pay,pm,exp,geo,tags,desc,url)=>{id++;R.push({id:`r${id}`,co,role,dom,pay,pm,ty:"Contract",rem:true,url,exp,geo,tags,desc,verified:V[co]||"2026-03-12"})};
-
+ 
   // ═══ OUTLIER AI (76 roles) ═══
   const oU="https://app.outlier.ai/en/expert/opportunities";
   LANGS.forEach(l=>{const p=ASIAN_PREMIUM.includes(l)?5:0;a("Outlier AI",`Multilingual Trainer — ${l}`,"Linguistics",`$${15+p}–$${30+p}/hr`,15+p,`Native ${l} fluency + degree`,["Global"],[l,"NLP","Writing","RLHF"],`Train AI in ${l} — evaluate responses, write prompts, assess cultural nuance.`,oU)});
@@ -89,7 +89,7 @@ function gen(){
   a("Outlier AI","Voice Actor — Multilingual","Audio","$18–$30/hr",18,"Native fluency",["Global"],["Audio","Voice","Multilingual"],"Record in your native language for multilingual speech AI.",oU);
   a("Outlier AI","Creative Writing Specialist","Writing","$20–$40/hr",20,"Published writing",["Global"],["Writing","Creative","Fiction"],"Train AI on creative writing, storytelling, and narrative quality.",oU);
   a("Outlier AI","Academic Writing Expert","Writing","$25–$45/hr",25,"Academic background",["Global"],["Writing","Academic","Research"],"Evaluate AI on academic writing, citations, and research quality.",oU);
-
+ 
   // ═══ SCALE AI / REMOTASKS (18 roles) ═══
   const sU="https://scale.com/careers",rU="https://www.remotasks.com";
   a("Scale AI","Data Labeling Quality Specialist","Annotation","$18–$28/hr",18,"Entry-level",["US"],["Annotation","QA"],"Annotate tasks, identify quality issues, provide feedback.",sU);
@@ -100,7 +100,7 @@ function gen(){
   ANNOT_TYPES.forEach(t=>{const pm=t.includes("3D")||t.includes("Point")?18:t.includes("Semantic")?18:15;a("Scale AI",`Remotasks — ${t} Annotator`,"Computer Vision",`$${pm}–$${pm+10}/hr`,pm,t.includes("3D")?"3D spatial reasoning":"Training provided",["90+ countries"],["CV",t.split(" ")[0],"Annotation"],`${t} annotation for autonomous systems and AI training.`,rU)});
   a("Scale AI","Remotasks — Data Categorization","Annotation","$12–$18/hr",12,"Basic computer skills",["90+ countries"],["Categorization","Entry-level"],"Categorize and organize unstructured data for ML pipelines.",rU);
   a("Scale AI","Remotasks — Content Moderation","Content","$14–$20/hr",14,"Judgment skills",["90+ countries"],["Moderation","Content","Safety"],"Review content for safety and policy compliance.",rU);
-
+ 
   // ═══ MERCOR (42 roles) ═══
   const mU="https://work.mercor.com/explore";
   a("Mercor","Expert Model Trainer — General","Multi-domain","$25–$75/hr",25,"Domain expertise",["Global"],["Expert","Multi-domain"],"Training data across diverse domains for frontier AI.",mU);
@@ -116,7 +116,7 @@ function gen(){
   a("Mercor","Media Analysis Specialist","Content","$20–$35/hr",20,"Content exp",["Global"],["Content","Media"],"Analyze images, evaluate content quality.",mU);
   a("Mercor","Deployment Strategist","Consulting","$40–$80/hr",40,"Strategy background",["Global"],["Strategy","Consulting"],"Help AI companies deploy and optimize workflows.",mU);
   STEM.slice(0,10).forEach(f=>a("Mercor",`STEM Tutor — ${f}`,"STEM","$35–$65/hr",35,`${f} degree + exp`,["Global"],["STEM",f,"Tutoring"],`Train AI on ${f.toLowerCase()} concepts and problem-solving.`,mU));
-
+ 
   // ═══ DATAANNOTATION.TECH (45 roles) ═══
   const dU="https://www.dataannotation.tech",dG=["US","CA","UK","IE","AU","NZ"];
   a("DataAnnotation.tech","Chatbot Evaluator — General","LLM Training","$20–$35/hr",20,"Bachelor's",dG,["RLHF","Evaluation","Writing"],"Evaluate chatbot responses, compare outputs, flag errors.",dU);
@@ -124,7 +124,7 @@ function gen(){
   CODE.forEach(l=>a("DataAnnotation.tech",`Code Reviewer — ${l}`,"Coding","$40–$55/hr",40,`${l} proficiency`,dG,["Coding",l.split("/")[0],"Review"],`Review AI ${l} code, debug, write challenges.`,dU));
   STEM.forEach(f=>a("DataAnnotation.tech",`STEM Expert — ${f}`,"STEM","$40–$55/hr",40,`Master's/PhD or 10+ yrs in ${f}`,dG,["STEM",f],`Evaluate AI ${f.toLowerCase()} reasoning.`,dU));
   [["Law","JD / attorney","Legal"],["Finance","CFA / finance","Finance"],["Medicine","MD / physician","Medical"],["Accounting","CPA","Finance"],["Engineering","PE license","STEM"]].forEach(([f,e,d])=>a("DataAnnotation.tech",`Professional Expert — ${f}`,d,"$50–$65+/hr",50,e,dG,[f,"Professional","Premium"],`${f} domain expertise for AI training.`,dU));
-
+ 
   // ═══ MINDRIFT / TOLOKA (38 roles) ═══
   const mdU="https://mindrift.ai/apply";
   STEM.forEach(f=>a("Mindrift (Toloka)",`AI Tutor — ${f}`,"STEM","$30–$55/hr",30,`Degree in ${f}`,["Global"],["STEM",f,"Tutoring"],`Create examples, evaluate AI in ${f.toLowerCase()}.`,mdU));
@@ -133,14 +133,14 @@ function gen(){
   a("Mindrift (Toloka)","AI Tutor — Humanities","Writing","$20–$35/hr",20,"Humanities degree",["Global"],["Humanities","Culture"],"History, philosophy, literature, social sciences.",mdU);
   a("Mindrift (Toloka)","Red Team Safety Specialist","AI Safety","$25–$45/hr",25,"Adversarial thinking",["Global"],["Red-teaming","Safety"],"Craft adversarial prompts to find safety blind spots.",mdU);
   a("Mindrift (Toloka)","Video Content Evaluator","Content","$20–$35/hr",20,"Media literacy",["Global"],["Video","Content","Evaluation"],"Evaluate AI-generated and recommended video content.",mdU);
-
+ 
   // ═══ TELUS DIGITAL AI (80 roles) ═══
   const tU="https://www.telusdigital.com/careers";
   LANGS.forEach(l=>a("TELUS Digital AI",`Search Quality Rater — ${l}`,"Search","$14–$22/hr",14,`Native ${l}, 6+ months in market`,["100+ countries"],["Search",l,"Rating"],`Rate ${l} search result relevance and quality.`,tU));
   LANGS.slice(0,20).forEach(l=>a("TELUS Digital AI",`Ads Quality Rater — ${l}`,"Search","$14–$20/hr",14,`Native ${l}`,["Multiple"],["Ads",l,"Rating"],`Evaluate ${l} ad relevance for search advertising.`,tU));
   a("TELUS Digital AI","Maps Evaluator","Search","$14–$20/hr",14,"Local knowledge",["Multiple"],["Maps","Local"],"Evaluate maps data, routes, location accuracy.",tU);
   a("TELUS Digital AI","Linguistic Data Annotator","Linguistics","$16–$28/hr",16,"Native fluency",["Global"],["NLP","Translation"],"Transcription, translation review, linguistic QA.",tU);
-
+ 
   // ═══ APPEN (30 roles) ═══
   const aU="https://appen.com";
   [["Image Annotator","Computer Vision",10,["Image","CV"],"Label images with bounding boxes and keypoints."],
@@ -156,7 +156,7 @@ function gen(){
   ].forEach(([role,dom,pm,tags,desc])=>a("Appen",role,dom,`$${pm}–$${pm+10}/hr`,pm,"Varies",["170+ countries"],tags,desc,aU));
   LANG_GROUPS.forEach(g=>a("Appen",`${g.name} Specialist`,"Linguistics","$12–$22/hr",12,`Native fluency in ${g.langs.slice(0,3).join(", ")}+`,["170+ countries"],["Multilingual",g.name.split(" ")[0]],"Language-specific AI data tasks — " +g.langs.slice(0,4).join(", ")+".",aU));
   ["English","Spanish","French","German","Japanese","Korean","Mandarin","Hindi","Arabic","Portuguese","Italian","Russian","Dutch","Swedish","Polish"].forEach(l=>a("Appen",`Speech Collector — ${l}`,"Audio","$10–$18/hr",10,`Native ${l}`,["170+ countries"],["Speech",l,"Recording"],`Record ${l} speech samples for voice AI training.`,aU));
-
+ 
   // ═══ SURGE AI (8 roles) ═══
   const sgU="https://www.surgehq.ai";
   a("Surge AI","Premium RLHF Evaluator","LLM Training","$30–$60/hr",30,"Advanced degree",["US","CA","UK"],["RLHF","Premium"],"Frontier AI evaluation. Selective managed teams.",sgU);
@@ -167,19 +167,19 @@ function gen(){
   a("Surge AI","Legal Domain Evaluator","Legal","$40–$65/hr",40,"Legal background",["US","CA","UK"],["Legal","Evaluation"],"Legal AI reasoning and compliance evaluation.",sgU);
   a("Surge AI","Creative Writing Evaluator","Writing","$30–$50/hr",30,"Writing background",["US","CA","UK"],["Writing","Creative"],"Evaluate AI creative writing quality and voice.",sgU);
   a("Surge AI","Data Quality Analyst","Annotation","$25–$45/hr",25,"Analytics background",["US","CA","UK"],["QA","Analytics"],"Quality analysis across annotation projects.",sgU);
-
+ 
   // ═══ MICRO1 (10 roles) ═══
   ["Medical","Legal","Finance","STEM","Coding","Engineering","Research","Data Science","Product","Design"].forEach(f=>{
     const pm=["Medical","Legal"].includes(f)?50:f==="Finance"?45:40;
     a("Micro1",`${f} AI Training Expert`,"Multi-domain",`$${pm}–$80/hr`,pm,`${f} credentials`,["Global"],[f,"Expert","Premium"],`${f} domain AI training with vetted expert network.`,"https://www.micro1.ai/jobs");
   });
-
+ 
   // ═══ ALIGNERR (12 roles) ═══
   const alU="https://alignerr.com";
   a("Alignerr","Cognitive Alignment — General","AI Alignment","$20–$40/hr",20,"Strong reasoning",["US","UK","CA"],["Alignment","Ethics"],"Cognitive labeling and ethical AI alignment.",alU);
   a("Alignerr","Reasoning Quality Evaluator","AI Alignment","$25–$45/hr",25,"Analytical skills",["US","UK","CA"],["Reasoning","Quality"],"Evaluate AI reasoning chains and logical consistency.",alU);
   ["Chemistry","Biology","Physics","Mathematics","Neuroscience","Computer Science","Economics","Psychology","Environmental Science","Materials Science"].forEach(f=>a("Alignerr",`PhD Expert — ${f}`,"STEM","$90–$200/hr",90,`PhD in ${f}`,["US","UK"],["PhD",f,"Premium"],`PhD-level ${f.toLowerCase()} AI evaluation. Highest pay.`,alU));
-
+ 
   // ═══ AI LABS (30 roles) ═══
   a("Anthropic","RLHF Contractor — Safety","LLM Training","$40–$80/hr",40,"Expertise + culture fit",["US"],["RLHF","Safety","Alignment"],"Safety-focused RLHF. Via Scale/Surge or internal.","https://www.anthropic.com/jobs");
   a("Anthropic","Red Team Specialist","AI Safety","$45–$85/hr",45,"Security/safety background",["US"],["Red-teaming","Safety"],"Adversarial testing of Claude models.","https://www.anthropic.com/jobs");
@@ -198,38 +198,38 @@ function gen(){
   a("Cohere","RAG Quality Evaluator","LLM Training","$35–$60/hr",35,"Information retrieval",["US","CA","Global"],["RAG","Retrieval","Quality"],"Evaluate retrieval-augmented generation quality.","https://cohere.com/careers");
   a("Meta AI","RLHF Contractor","LLM Training","$35–$70/hr",35,"Technical background",["US"],["RLHF","LLM"],"Human feedback for Llama model training.","https://www.metacareers.com");
   a("Meta AI","Content Safety Evaluator","AI Safety","$30–$55/hr",30,"Content policy exp",["US"],["Safety","Content"],"Content safety evaluation for AI systems.","https://www.metacareers.com");
-
+ 
   // ═══ WELOCALIZE (42 roles) ═══
   const wU="https://www.welocalize.com";
   LANGS.slice(0,20).forEach(l=>a("Welocalize",`Search Rater — ${l}`,"Search","$8–$20/hr",8,`Native ${l} + exam`,["Global"],["Search",l],`${l} search quality evaluation.`,wU));
   LANGS.slice(0,20).forEach(l=>a("Welocalize",`Ads Rater — ${l}`,"Search","$8–$18/hr",8,`Native ${l}`,["Global"],["Ads",l],`${l} ad relevance evaluation.`,wU));
   a("Welocalize","Music Evaluator","Content","$12–$22/hr",12,"Music literacy",["Global"],["Music","Evaluation"],"Music content assessment for AI recommendations.",wU);
   a("Welocalize","Video Evaluator","Content","$12–$22/hr",12,"Media literacy",["Global"],["Video","Evaluation"],"Video content assessment for AI moderation.",wU);
-
+ 
   // ═══ ONEFORMA (22 roles) ═══
   const ofU="https://www.oneforma.com";
   LANGS.slice(0,20).forEach(l=>a("OneForma",`${l} Data Contributor`,"Linguistics","$8–$20/hr",8,`Native ${l}`,["Global"],[l,"Transcription","Translation"],`${l} annotation, transcription, translation for AI.`,ofU));
   a("OneForma","Audio Collection Specialist","Audio","$10–$18/hr",10,"Smartphone + quiet space",["Global"],["Audio","Collection"],"Record speech samples for AI training.",ofU);
   a("OneForma","Image Annotation Specialist","Computer Vision","$8–$16/hr",8,"Attention to detail",["Global"],["Image","Annotation"],"Image labeling and categorization for AI.",ofU);
-
+ 
   // ═══ RWS (16 roles) ═══
   const rwU="https://www.rws.com";
   ["English","Spanish","French","German","Japanese","Korean","Chinese","Arabic","Portuguese","Italian","Russian","Dutch","Swedish","Polish","Turkish"].forEach(l=>a("RWS",`Linguistic Validator — ${l}`,"Linguistics","$15–$35/hr",15,`Pro ${l} translator`,["Global"],[l,"Linguistics","Validation"],`${l} linguistic validation for enterprise AI.`,rwU));
   a("RWS","Domain-Specific Annotator","Annotation","$18–$40/hr",18,"Domain expertise",["Global"],["Annotation","Domain","Enterprise"],"Regulated domain annotation — medical, legal, financial.",rwU);
-
+ 
   // ═══ LXT AI (12 roles) ═══
   const lxU="https://www.lxt.ai";
   ["English","Spanish","French","German","Japanese","Korean","Mandarin","Arabic","Hindi","Portuguese"].forEach(l=>a("LXT AI",`Speech Specialist — ${l}`,"Audio","$10–$22/hr",10,`Native ${l}`,["Global"],["Speech",l,"Audio"],`${l} speech data collection for enterprise AI.`,lxU));
   a("LXT AI","Text Data Annotator","Linguistics","$10–$20/hr",10,"Language proficiency",["Global"],["Text","NLP"],"Text annotation and linguistic processing.",lxU);
   a("LXT AI","Audio QA Specialist","Audio","$12–$24/hr",12,"Audio experience",["Global"],["Audio","QA"],"Quality assurance for speech and audio datasets.",lxU);
-
+ 
   // ═══ TRANSPERFECT (18 roles) ═══
   const tpU="https://www.transperfect.com";
   ["English","Spanish","French","German","Japanese","Korean","Chinese","Arabic","Portuguese","Italian","Russian","Dutch","Swedish","Polish","Turkish"].forEach(l=>a("TransPerfect",`Linguistic Specialist — ${l}`,"Linguistics","$12–$28/hr",12,`${l} translation exp`,["Global"],["Localization",l,"NLP"],`${l} localization and annotation for enterprise AI.`,tpU));
   a("TransPerfect","AI Content Evaluator","Content","$12–$25/hr",12,"Content literacy",["Global"],["Content","Evaluation"],"Content quality evaluation for AI training.",tpU);
   a("TransPerfect","Legal Translation — AI","Legal","$20–$40/hr",20,"Legal translation",["Global"],["Legal","Translation"],"Legal document annotation for AI training.",tpU);
   a("TransPerfect","Medical Translation — AI","Medical","$20–$40/hr",20,"Medical translation",["Global"],["Medical","Translation"],"Medical content annotation for AI training.",tpU);
-
+ 
   // ═══ CROWD / MICROTASK (12 roles) ═══
   a("Toloka","Microtask Annotator","Annotation","$5–$15/hr",5,"None",["100+ countries"],["Microtasks","Entry-level"],"Data labeling, categorization microtasks.","https://toloka.ai");
   a("Toloka","Image Classification","Computer Vision","$5–$12/hr",5,"None",["100+ countries"],["Image","Classification"],"Image classification and tagging tasks.","https://toloka.ai");
@@ -238,7 +238,7 @@ function gen(){
   a("Clickworker","Microtask Contributor","Annotation","$8–$18/hr",8,"None",["Global (EU)"],["Microtasks","EU"],"Text labeling, image tagging, surveys.","https://www.clickworker.com");
   a("Clickworker","App Testing & Review","Content","$10–$20/hr",10,"Smartphone",["Global (EU)"],["App Testing","Mobile"],"Test and review mobile apps and interfaces.","https://www.clickworker.com");
   a("TaskVerse","Microtask Worker","Annotation","$6–$14/hr",6,"None",["Global"],["Microtasks","Entry-level"],"Occasional data labeling and content review.","https://taskverse.com");
-
+ 
   // ═══ SPECIALIZED (30 roles) ═══
   a("Prolific","AI Research Participant","Research","$10–$20/hr",10,"Profile match",["Global"],["Research","Academic"],"Academic AI research studies. Fair-pay.","https://www.prolific.com");
   a("Prolific","Behavioral Study Participant","Research","$10–$18/hr",10,"Profile match",["Global"],["Behavioral","Psychology"],"Behavioral science studies for AI training.","https://www.prolific.com");
@@ -254,7 +254,7 @@ function gen(){
   a("Turing","RLHF Contributor","LLM Training","$25–$50/hr",25,"Technical",["Global"],["RLHF","Fine-tuning"],"Fine-tuning and preference optimization.","https://www.turing.com");
   a("Turing","AI Code Evaluator","Coding","$30–$55/hr",30,"SWE background",["Global"],["Coding","Evaluation"],"Code evaluation and AI benchmarking.","https://www.turing.com");
   a("Turing","AI Writing Evaluator","Writing","$20–$40/hr",20,"Writing background",["Global"],["Writing","Evaluation"],"Writing quality evaluation for AI models.","https://www.turing.com");
-
+ 
   // ═══ ENTERPRISE / MANAGED (18 roles) ═══
   a("Welo Data","AI Training Contributor","Multi-domain","$12–$25/hr",12,"Skills assessment",["Global"],["Annotation","Evaluation"],"500K+ community. Ethical AI training.","https://welodata.ai");
   a("Welo Data","Language Specialist","Linguistics","$14–$28/hr",14,"Native + cultural",["Global"],["Multilingual","Cultural"],"Language and cultural evaluation.","https://welodata.ai");
@@ -269,7 +269,7 @@ function gen(){
   a("iMerit","Geospatial Annotator","Computer Vision","$12–$25/hr",12,"GIS knowledge",["India","US"],["Geospatial","Satellite"],"Satellite and geospatial data annotation.","https://imerit.net");
   a("Innodata","Professional AI Annotator","Annotation","$18–$30/hr",18,"Professional exp",["US","PH","India"],["Enterprise","Annotation"],"Enterprise annotation and processing.","https://www.innodata.com");
   a("Innodata","Content Specialist","Content","$18–$28/hr",18,"Content exp",["US","PH","India"],["Content","Enterprise"],"AI content processing and evaluation.","https://www.innodata.com");
-
+ 
   // ═══ AGGREGATORS & ENTRY-LEVEL (8 roles) ═══
   a("OpenTrain AI","Cross-Platform Trainer","Multi-domain","$15–$100/hr",15,"Varies",["Global"],["Aggregator","Multi-platform"],"Jobs from 20+ platforms. One profile.","https://www.opentrain.ai");
   a("OpenTrain AI","LLM Evaluation Specialist","LLM Training","$25–$80/hr",25,"Evaluation exp",["Global"],["LLM","Evaluation"],"Cross-platform LLM evaluation opportunities.","https://www.opentrain.ai");
@@ -279,28 +279,28 @@ function gen(){
   a("Hive AI","Image Classification Specialist","Computer Vision","$15–$25/hr",15,"Attention to detail",["Global"],["Image","Classification"],"Image classification and auto-labeling QA.","https://thehive.ai");
   a("Pangram Labs","AI Detection Specialist","Annotation","$18–$30/hr",18,"Detail-oriented",["US"],["Detection","Authenticity"],"Datasets for AI content detection.","https://www.pangramlabs.com");
   a("Pangram Labs","Content Authenticity Analyst","Content","$18–$28/hr",18,"Analytical skills",["US"],["Authenticity","Analysis"],"Analyze content for AI detection systems.","https://www.pangramlabs.com");
-
+ 
   return R;
 }
-
+ 
 const ROLES=gen();
 const ALL_COS=[...new Set(ROLES.map(r=>r.co))].sort();
 const ALL_DOMS=[...new Set(ROLES.map(r=>r.dom))].sort();
 const PT=[{l:"Any",m:0},{l:"$8+",m:8},{l:"$15+",m:15},{l:"$20+",m:20},{l:"$25+",m:25},{l:"$35+",m:35},{l:"$40+",m:40},{l:"$50+",m:50},{l:"$90+",m:90}];
-
+ 
 const S={bg:"#0a0a0c",card:"rgba(22,22,26,.9)",border:"rgba(255,255,255,.05)",borderH:"rgba(255,255,255,.12)",muted:"#71717a",subtle:"#52525b",text:"#f4f4f5",dim:"#a1a1aa",green:"#34d399"};
-
+ 
 function Badge({children,color}){const c={green:{bg:"rgba(52,211,153,.1)",c:"#6ee7b7",bc:"rgba(52,211,153,.15)"},sky:{bg:"rgba(56,189,248,.1)",c:"#7dd3fc",bc:"rgba(56,189,248,.15)"},amber:{bg:"rgba(251,191,36,.1)",c:"#fcd34d",bc:"rgba(251,191,36,.15)"},violet:{bg:"rgba(167,139,250,.1)",c:"#c4b5fd",bc:"rgba(167,139,250,.15)"},rose:{bg:"rgba(251,113,133,.1)",c:"#fda4af",bc:"rgba(251,113,133,.15)"},default:{bg:"rgba(255,255,255,.04)",c:"#a1a1aa",bc:"rgba(255,255,255,.07)"}};const s=c[color]||c.default;return <span style={{display:"inline-flex",padding:"2px 7px",fontSize:10,fontWeight:500,borderRadius:4,border:`1px solid ${s.bc}`,background:s.bg,color:s.c,whiteSpace:"nowrap"}}>{children}</span>;}
 function Btn({children,onClick,primary,small,disabled,style:sx,...r}){return<button onClick={onClick} disabled={disabled} style={{display:"inline-flex",alignItems:"center",gap:5,padding:small?"6px 12px":"9px 16px",background:primary?"rgba(52,211,153,.15)":"rgba(255,255,255,.06)",border:`1px solid ${primary?"rgba(52,211,153,.2)":"rgba(255,255,255,.06)"}`,borderRadius:8,fontSize:small?12:13,color:primary?"#6ee7b7":"#e4e4e7",fontWeight:primary?600:500,cursor:disabled?"not-allowed":"pointer",fontFamily:"inherit",opacity:disabled?.5:1,...sx}} {...r}>{children}</button>;}
 function Sel({value,onChange,children}){return<select value={value} onChange={onChange} style={{appearance:"none",padding:"8px 26px 8px 10px",backgroundColor:"rgba(255,255,255,.03)",border:"1px solid rgba(255,255,255,.06)",borderRadius:8,fontSize:12,color:"#d4d4d8",outline:"none",fontFamily:"inherit",cursor:"pointer",backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E\")",backgroundRepeat:"no-repeat",backgroundPosition:"right 8px center"}}>{children}</select>;}
-
+ 
 // Staleness helper
 function daysSince(dateStr){const d=new Date(dateStr);const now=new Date();return Math.floor((now-d)/864e5);}
 function freshLabel(dateStr){const d=daysSince(dateStr);if(d<=7)return{text:"Verified",color:"green"};if(d<=30)return{text:`${d}d ago`,color:"amber"};return{text:`${d}d old`,color:"rose"};}
-
+ 
 // Company name to platform ID mapping for freshness lookup
 const CO_TO_ID={"Outlier AI":"outlier","Scale AI":"scale","Mercor":"mercor","DataAnnotation.tech":"dataannotation","Mindrift (Toloka)":"mindrift","TELUS Digital AI":"telus","Appen":"appen","Surge AI":"surge","Micro1":"micro1","Alignerr":"alignerr","Welocalize":"welocalize","OneForma":"oneforma","RWS":"rws","LXT AI":"lxt","TransPerfect":"transperfect","Anthropic":"anthropic","OpenAI":"openai","Google DeepMind":"deepmind","xAI":"xai","Cohere":"cohere","Meta AI":"meta","Toloka":"toloka","Amazon Mechanical Turk":"mturk","Clickworker":"clickworker","TaskVerse":"taskverse","Prolific":"prolific","Braintrust":"braintrust","Pareto AI":"pareto","Abaka AI":"abaka","Stellar AI":"stellar","SME Careers":"sme","Turing":"turing","Welo Data":"welo","CloudFactory":"cloudfactory","Sama":"sama","iMerit":"imerit","Innodata":"innodata","OpenTrain AI":"opentrain","Handshake AI":"handshake","Hive AI":"hive","Pangram Labs":"pangram"};
-
+ 
 function ListingsTab(){
   const[q,sQ]=useState("");const[co,sCo]=useState("All");const[dom,sDom]=useState("All");const[pt,sPt]=useState(0);const[sort,sSort]=useState("pay");const[page,sPage]=useState(0);const PER=48;
   const[freshData,setFreshData]=useState(null);
@@ -370,7 +370,7 @@ function ListingsTab(){
     </div>}
   </div>);
 }
-
+ 
 function ResumeTab(){
   const[file,setFile]=useState(null);const[text,setText]=useState("");const[parsed,setParsed]=useState(null);const[matches,setMatches]=useState(null);const[loading,setLoading]=useState(false);const[saved,setSaved]=useState(false);
   const fr=useRef();
@@ -386,12 +386,12 @@ function ResumeTab(){
       }catch(err){setText("[PDF text extraction failed — please paste your resume text below]");console.error(err);}
     }else{setText("[Unsupported format — please paste your resume text below]")}
   };
-
+ 
   // ── CLIENT-SIDE RESUME PARSER ──
   function parseResume(txt){
     const lines=txt.split("\n").map(l=>l.trim()).filter(Boolean);
     const all=txt.toLowerCase();
-
+ 
     // ── NAME: first line that looks like a name (2-4 capitalized words, no dates/emails) ──
     let name="";
     for(const l of lines){
@@ -400,13 +400,13 @@ function ResumeTab(){
       const cleaned=l.replace(/[|•·,\-–]/g," ").trim();
       if(cleaned.length>2&&cleaned.length<50&&cleaned.split(/\s+/).length<=5&&/^[A-Z]/.test(cleaned)){name=cleaned;break;}
     }
-
+ 
     // ── EMAIL ──
     const emailM=txt.match(/[\w.+-]+@[\w-]+\.[\w.]+/);const email=emailM?emailM[0]:"";
-
+ 
     // ── PHONE: look specifically for phone patterns, not zip codes ──
     const phoneM=txt.match(/(?:\+\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/);const phone=phoneM?phoneM[0]:"";
-
+ 
     // ── CITY / STATE: parse from address line or location mentions ──
     let city="",state="";
     // Try "City, ST" or "City, State" patterns in first 5 lines (header area)
@@ -415,13 +415,13 @@ function ResumeTab(){
     if(cityStateM){city=cityStateM[1];state=cityStateM[2];}
     // Also try "based in / located in" pattern
     if(!city){const bm=txt.match(/(?:based in|located in|living in)\s+([A-Z][a-z]+(?:\s[A-Z][a-z]+)?)/i);if(bm)city=bm[1];}
-
+ 
     // ── COUNTRY ──
     const countryList=["United States","South Korea","Canada","United Kingdom","Australia","India","Germany","France","Brazil","Japan","China","Singapore","Netherlands","Ireland","New Zealand","Mexico","Spain","Italy","Nigeria","Kenya","Philippines","Pakistan","Egypt","South Africa","UAE","Saudi Arabia","Israel","Sweden","Norway","Denmark","Finland","Poland","Romania","Turkey","Vietnam","Thailand","Indonesia","Malaysia","Colombia","Argentina","Ukraine","Russia","Czech Republic","Hungary","Greece","Portugal","Taiwan","Hong Kong"];
     let country="";for(const c of countryList){if(all.includes(c.toLowerCase())){country=c;break;}}
     // Infer from state abbreviation
     if(!country&&state){const usStates=["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC"];if(usStates.includes(state))country="United States";}
-
+ 
     // ── SECTION DETECTION: find where each section starts ──
     // Only match lines that are pure headers (all caps, or short header words without long trailing content)
     const sectionWords=["PROFESSIONAL EXPERIENCE","WORK EXPERIENCE","EXPERIENCE","EMPLOYMENT","EDUCATION","SKILLS","ADDITIONAL INFORMATION","ADDITIONAL","LANGUAGES","CERTIFICATIONS","PROJECTS","AWARDS","INTERESTS","TECHNICAL SKILLS","SUMMARY","PROFILE","OBJECTIVE","VOLUNTEER","PUBLICATIONS","ACTIVITIES","HONORS"];
@@ -437,7 +437,7 @@ function ResumeTab(){
         sections[currentSection].lines.push(l);
       }
     });
-
+ 
     // ── EXPERIENCE: parse from experience section ──
     const experience=[];
     const expSection=Object.entries(sections).find(([k])=>/experience|employment/i.test(k));
@@ -486,7 +486,7 @@ function ResumeTab(){
       }
       entries.forEach(e=>experience.push(e));
     }
-
+ 
     // ── EDUCATION: parse from education section ──
     const education=[];
     const eduSection=Object.entries(sections).find(([k])=>/education/i.test(k));
@@ -496,7 +496,7 @@ function ResumeTab(){
       const schoolRE=/University|College|Institute|School|Academy|MIT|Stanford|Harvard|Yale|Princeton|Columbia|Berkeley|UCLA|NYU|CMU|Caltech|Oxford|Cambridge|Boston College|Georgia Tech|Virginia Tech/i;
       const degreeRE=/\b(Ph\.?D|Doctor|Master|MBA|M\.?S\.?|M\.?A\.?|M\.?Eng|B\.?S\.?|B\.?A\.?|B\.?Eng|B\.?Tech|Bachelor|Associate|A\.?S\.?|A\.?A\.?)\b/i;
       const yearRE=/((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{4}\s*[-–]\s*(?:(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{4}|Present|Current|\d{4}))/i;
-
+ 
       let currentEdu=null;
       for(const l of eduLines){
         if(schoolRE.test(l)){
@@ -534,32 +534,32 @@ function ResumeTab(){
         }
       }
     }
-
+ 
     // ── Also try inline degree patterns for resumes without section headers ──
     if(education.length===0){
       const inlineDE=/(?:Ph\.?D\.?|Master(?:'s)?|M\.?B\.?A\.?|Bachelor(?:'s)?|B\.?[AS]\.?)\s+(?:in\s+)?([A-Za-z\s&]+?)(?:\s+(?:from|at|-|–|,)\s+)([A-Za-z\s]+(?:University|College|Institute))/gi;
       let m;while((m=inlineDE.exec(txt))!==null){education.push({degree:m[0].match(/PhD|Doctor/i)?"PhD":m[0].match(/Master|MBA|M\./i)?"Master's":"Bachelor's",major:m[1].trim(),school:m[2].trim(),year:""});}
     }
-
+ 
     // ── SKILLS ──
     const skillKW=["Python","JavaScript","TypeScript","Java","C\\+\\+","C#","Go","Rust","Ruby","PHP","Swift","Kotlin","SQL","R ","MATLAB","Scala","HTML","CSS","React","Angular","Vue","Node\\.js","Django","Flask","Spring","Docker","Kubernetes","AWS","Azure","GCP","Linux","Git","MongoDB","PostgreSQL","MySQL","Redis","TensorFlow","PyTorch","Machine Learning","Deep Learning","NLP","Computer Vision","Data Science","Data Analysis","Statistics","Excel","Tableau","Power BI","Figma","Photoshop","Illustrator","AutoCAD","SolidWorks","SPSS","Stata","LaTeX","JIRA","Agile","Scrum","REST API","GraphQL","Pandas","NumPy","Scikit-learn","Spark","Hadoop","Airflow","dbt","Snowflake","Terraform","Jenkins","CI/CD","Flutter","React Native","Google Analytics","SAP","Salesforce","Confluence","Microsoft Office","Project Management","Leadership"];
     const skills=[];skillKW.forEach(kw=>{const clean=kw.replace(/\\\+/g,"+").replace(/\\\./g,".");const re=new RegExp("\\b"+kw.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\b","i");if(re.test(txt))skills.push(clean);});
-
+ 
     // ── LANGUAGES ──
     const langKW=["English","Spanish","French","German","Portuguese","Italian","Dutch","Russian","Polish","Turkish","Vietnamese","Thai","Indonesian","Malay","Tagalog","Hindi","Bengali","Tamil","Telugu","Urdu","Japanese","Korean","Mandarin","Cantonese","Chinese","Arabic","Hebrew","Persian","Farsi","Swahili","Swedish","Norwegian","Danish","Finnish","Czech","Romanian","Hungarian","Greek","Ukrainian","Catalan"];
     const languages=langKW.filter(l=>new RegExp("\\b"+l+"\\b","i").test(txt));
-
+ 
     // ── CERTIFICATIONS ──
     const certKW=["CPA","CFA","PMP","AWS Certified","Google Certified","Azure Certified","CCNA","CCNP","CompTIA","Six Sigma","Scrum Master","CSM","CISSP","CEH","PE License","Board Certified","Bar Admission","Series 7","Series 63"];
     const certifications=certKW.filter(c=>new RegExp("\\b"+c.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\b","i").test(txt));
-
+ 
     // ── SUMMARY ──
     const summaryM=txt.match(/(?:summary|profile|objective|about)\s*:?\s*\n?\s*([^\n]{20,200})/i);
     const summary=summaryM?summaryM[1].trim():"";
-
+ 
     return {name:name.slice(0,60),email,phone,country:country||(state?"United States":""),city:city||(state?city+" "+state:""),education,skills:[...new Set(skills)],languages,experience:experience.slice(0,10),certifications,summary};
   }
-
+ 
   // ── CLIENT-SIDE MATCHING ENGINE ──
   function matchRoles(profile){
     const pSkills=new Set((profile.skills||[]).map(s=>s.toLowerCase()));
@@ -572,10 +572,10 @@ function ResumeTab(){
     const hasMasters=hasPhD||hasDegree("master");
     const hasBachelors=hasMasters||hasDegree("bachelor");
     const allText=[...pSkills,...pLangs,...pMajors,...pTitles,profile.summary||""].join(" ").toLowerCase();
-
+ 
     return ROLES.map(role=>{
       let score=0;const reasons=[];
-
+ 
       // Skill match (up to 40 pts)
       const roleTags=role.tags.map(t=>t.toLowerCase());
       const roleWords=[...roleTags,role.dom.toLowerCase(),...role.role.toLowerCase().split(/[\s—\-\/]+/),...role.desc.toLowerCase().split(/\s+/)];
@@ -587,42 +587,42 @@ function ResumeTab(){
         else if(roleWords.some(w=>w.includes(sl)||sl.includes(w))){skillHits++;score+=4}
       });
       if(skillHits>0)reasons.push(`${skillHits} skill${skillHits>1?"s":""} match`);
-
+ 
       // Language match (up to 30 pts for language roles)
       if(role.dom==="Linguistics"||role.role.toLowerCase().includes("multilingual")||role.role.toLowerCase().includes("linguistic")){
         const roleLang=role.role.match(/—\s*(\w+)/)?.[1]?.toLowerCase()||"";
         if(roleLang&&pLangs.has(roleLang)){score+=30;reasons.push(`Native ${roleLang} speaker`)}
         else if(pLangs.size>1){score+=10;reasons.push("Multilingual")}
       }
-
+ 
       // Education match (up to 25 pts)
       if(role.exp.toLowerCase().includes("phd")&&hasPhD){score+=25;reasons.push("PhD holder")}
       else if(role.exp.toLowerCase().includes("master")&&hasMasters){score+=20;reasons.push("Master's degree")}
       else if(role.exp.toLowerCase().includes("bachelor")&&hasBachelors){score+=15;reasons.push("Bachelor's degree")}
-
+ 
       // Major/field alignment (up to 20 pts)
       const roleField=role.dom.toLowerCase();
       if(pMajors.some(m=>roleField.includes(m)||m.includes(roleField)||roleTags.some(t=>m.includes(t)))){score+=20;reasons.push("Field of study aligns")}
       else if(allText.includes(roleField)){score+=10;reasons.push("Related background")}
-
+ 
       // Experience alignment (up to 15 pts)
       const expWords=pTitles.join(" ");
       if(roleTags.some(t=>expWords.includes(t))){score+=15;reasons.push("Relevant work experience")}
       else if(roleWords.some(w=>w.length>3&&expWords.includes(w))){score+=8;reasons.push("Related experience")}
-
+ 
       // Professional credentials (up to 20 pts)
       const certs=(profile.certifications||[]).map(c=>c.toLowerCase()).join(" ");
       if(role.dom==="Medical"&&(certs.includes("md")||certs.includes("board certified")||allText.includes("physician")||allText.includes("medical doctor"))){score+=20;reasons.push("Medical credentials")}
       if(role.dom==="Legal"&&(certs.includes("jd")||certs.includes("bar")||allText.includes("attorney")||allText.includes("lawyer"))){score+=20;reasons.push("Legal credentials")}
       if(role.dom==="Finance"&&(certs.includes("cfa")||certs.includes("cpa")||allText.includes("financial analyst"))){score+=20;reasons.push("Finance credentials")}
-
+ 
       // Cap at 100
       score=Math.min(100,score);
       const reason=reasons.length>0?reasons.slice(0,3).join(" • "):"General qualification match";
       return {id:role.id,score,reason};
     }).filter(m=>m.score>10).sort((a,b)=>b.score-a.score).slice(0,25);
   }
-
+ 
   const parse=()=>{
     if(!text||text.startsWith("[")&&text.includes("extraction failed"))return;
     setLoading(true);setParsed(null);setMatches(null);setSaved(false);
@@ -639,7 +639,7 @@ function ResumeTab(){
       setLoading(false);
     },50);
   };
-
+ 
   const save=()=>{if(!parsed)return;try{const id=`a_${Date.now()}`;const rec={...parsed,id,uploadedAt:new Date().toISOString(),matchedRoles:matches?.map(m=>m.id)||[]};const all=JSON.parse(localStorage.getItem("hdo_apps")||"[]");all.push(rec);localStorage.setItem("hdo_apps",JSON.stringify(all));setSaved(true)}catch(e){alert(e.message)}};
   return(<div>
     <div style={{background:"rgba(52,211,153,.05)",border:"1px solid rgba(52,211,153,.1)",borderRadius:12,padding:14,marginBottom:14}}>
@@ -688,7 +688,7 @@ function ResumeTab(){
     </div>
   </div>);
 }
-
+ 
 function RepoTab(){
   const[apps,setApps]=useState([]);const[filter,setFilter]=useState({country:"All",skill:"All",school:"All",major:"All"});const[expanded,setExpanded]=useState(null);const[sortBy,setSortBy]=useState("date");
   const load=useCallback(()=>{try{setApps(JSON.parse(localStorage.getItem("hdo_apps")||"[]"))}catch{setApps([])}},[]);
@@ -729,31 +729,118 @@ function RepoTab(){
     ))}</div>}
   </div>);
 }
-
+ 
+// ═══════════════ EARNINGS VISUALIZER ═══════════════
+const THINGS_TO_BUY = [
+  {name:"Coffee (daily)",price:6,emoji:"☕",cat:"Daily"},{name:"Chipotle burrito",price:12,emoji:"🌯",cat:"Daily"},
+  {name:"Netflix (monthly)",price:16,emoji:"📺",cat:"Monthly"},{name:"Spotify (monthly)",price:12,emoji:"🎵",cat:"Monthly"},
+  {name:"Gym membership",price:50,emoji:"💪",cat:"Monthly"},{name:"One month rent (NYC)",price:3500,emoji:"🏙️",cat:"Monthly"},
+  {name:"One month rent (avg US)",price:1800,emoji:"🏘️",cat:"Monthly"},
+  {name:"New pair of Jordans",price:190,emoji:"👟",cat:"Want"},{name:"AirPods Pro",price:249,emoji:"🎧",cat:"Want"},
+  {name:"PS5",price:499,emoji:"🎮",cat:"Want"},{name:"iPhone 16 Pro",price:999,emoji:"📱",cat:"Want"},
+  {name:"MacBook Air M4",price:1099,emoji:"💻",cat:"Want"},{name:"MacBook Pro M4",price:1599,emoji:"💻",cat:"Want"},
+  {name:"65\" Samsung OLED TV",price:1800,emoji:"📺",cat:"Want"},{name:"Full wardrobe refresh",price:2000,emoji:"👔",cat:"Want"},
+  {name:"Home office setup",price:3000,emoji:"🖥️",cat:"Want"},
+  {name:"Summer vacation (Europe)",price:4000,emoji:"✈️",cat:"Experience"},{name:"Japan trip (2 weeks)",price:5000,emoji:"🇯🇵",cat:"Experience"},
+  {name:"Round the world ticket",price:8000,emoji:"🌍",cat:"Experience"},
+  {name:"Emergency fund ($10K)",price:10000,emoji:"🏦",cat:"Financial"},{name:"Year of groceries",price:7200,emoji:"🛒",cat:"Financial"},
+  {name:"Down payment on a car",price:5000,emoji:"🚗",cat:"Financial"},{name:"Pay off student loans",price:30000,emoji:"🎓",cat:"Financial"},
+  {name:"Wedding fund",price:30000,emoji:"💒",cat:"Financial"},{name:"Down payment on a house",price:60000,emoji:"🏠",cat:"Financial"},
+  {name:"Rolex Oyster Perpetual",price:6500,emoji:"⌚",cat:"Luxury"},{name:"Tesla Model 3",price:35000,emoji:"⚡",cat:"Luxury"},
+];
+const PLAT_RATES = [
+  {name:"Mercor (Medical MD)",rate:150,tier:"Expert"},{name:"Alignerr (PhD STEM)",rate:120,tier:"Expert"},
+  {name:"Mercor (Legal)",rate:90,tier:"Expert"},{name:"Anthropic (RLHF)",rate:60,tier:"Expert"},
+  {name:"DataAnnotation (Professional)",rate:57,tier:"Premium"},{name:"Outlier AI (STEM PhD)",rate:57,tier:"Premium"},
+  {name:"OpenAI (Trainer)",rate:52,tier:"Premium"},{name:"Outlier AI (Coding)",rate:50,tier:"Premium"},
+  {name:"DataAnnotation (Coding)",rate:47,tier:"Premium"},{name:"Surge AI (RLHF)",rate:45,tier:"Premium"},
+  {name:"Micro1 (Expert)",rate:57,tier:"Premium"},
+  {name:"Mindrift (STEM Tutor)",rate:42,tier:"Mid"},{name:"Mercor (General)",rate:50,tier:"Mid"},
+  {name:"Braintrust (QA Coder)",rate:42,tier:"Mid"},
+  {name:"Outlier AI (Writing)",rate:27,tier:"Entry"},{name:"DataAnnotation (General)",rate:27,tier:"Entry"},
+  {name:"TELUS Digital (Search)",rate:18,tier:"Entry"},{name:"Appen (General)",rate:16,tier:"Entry"},
+  {name:"Clickworker",rate:13,tier:"Entry"},{name:"Toloka",rate:10,tier:"Entry"},{name:"Amazon MTurk",rate:8,tier:"Entry"},
+];
+ 
+function EarningsTab(){
+  const[hours,setHours]=useState(20);
+  const[sp,setSp]=useState(5);
+  const[gi,setGi]=useState(9);
+  const p=PLAT_RATES[sp],g=THINGS_TO_BUY[gi];
+  const wkG=hours*p.rate,wkN=Math.round(wkG*.72),moN=Math.round(wkN*4.33),yrN=wkN*52;
+  const wksToGoal=Math.ceil(g.price/wkN),pPct=Math.min(100,Math.round((wkN/g.price)*100));
+  return(<div>
+    <div style={{background:"linear-gradient(135deg,rgba(52,211,153,.08),rgba(56,189,248,.08))",border:"1px solid rgba(52,211,153,.12)",borderRadius:14,padding:20,marginBottom:20}}>
+      <h3 style={{fontSize:18,fontWeight:700,color:"white",marginBottom:4}}>💰 Earnings Visualizer</h3>
+      <p style={{fontSize:13,color:S.dim}}>See what your AI training work can buy. Pick a platform, set your hours, choose a goal.</p>
+    </div>
+    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:12,marginBottom:20}}>
+      <div style={{background:S.card,border:`1px solid ${S.border}`,borderRadius:12,padding:16}}>
+        <label style={{fontSize:11,color:S.muted,display:"block",marginBottom:6}}>PLATFORM & ROLE</label>
+        <select value={sp} onChange={e=>setSp(Number(e.target.value))} style={{width:"100%",padding:"10px 12px",backgroundColor:"rgba(255,255,255,.05)",border:"1px solid rgba(255,255,255,.08)",borderRadius:8,fontSize:13,color:S.text,outline:"none",fontFamily:"inherit",cursor:"pointer"}}>
+          {["Expert","Premium","Mid","Entry"].map(t=><optgroup key={t} label={t}>{PLAT_RATES.map((pr,i)=>pr.tier===t?<option key={i} value={i}>{pr.name} — ${pr.rate}/hr</option>:null)}</optgroup>)}
+        </select>
+        <div style={{marginTop:8,fontFamily:"'JetBrains Mono',monospace",fontSize:22,fontWeight:700,color:S.green}}>${p.rate}<span style={{fontSize:13,color:S.muted,fontWeight:400}}>/hr</span></div>
+      </div>
+      <div style={{background:S.card,border:`1px solid ${S.border}`,borderRadius:12,padding:16}}>
+        <label style={{fontSize:11,color:S.muted,display:"block",marginBottom:6}}>HOURS PER WEEK</label>
+        <input type="range" min="5" max="60" step="5" value={hours} onChange={e=>setHours(Number(e.target.value))} style={{width:"100%",accentColor:S.green,cursor:"pointer"}}/>
+        <div style={{textAlign:"center"}}><span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:28,fontWeight:700,color:"white"}}>{hours}</span><span style={{fontSize:13,color:S.muted}}> hrs/wk</span></div>
+        <div style={{fontSize:11,color:S.dim,textAlign:"center"}}>{hours<=10?"Side gig":hours<=20?"Part-time":hours<=35?"Solid hustle":"Full-time grind"}</div>
+      </div>
+      <div style={{background:S.card,border:`1px solid ${S.border}`,borderRadius:12,padding:16}}>
+        <label style={{fontSize:11,color:S.muted,display:"block",marginBottom:6}}>I WANT TO BUY</label>
+        <select value={gi} onChange={e=>setGi(Number(e.target.value))} style={{width:"100%",padding:"10px 12px",backgroundColor:"rgba(255,255,255,.05)",border:"1px solid rgba(255,255,255,.08)",borderRadius:8,fontSize:13,color:S.text,outline:"none",fontFamily:"inherit",cursor:"pointer"}}>
+          {["Daily","Monthly","Want","Experience","Financial","Luxury"].map(cat=><optgroup key={cat} label={cat}>{THINGS_TO_BUY.map((t,i)=>t.cat===cat?<option key={i} value={i}>{t.emoji} {t.name} — ${t.price.toLocaleString()}</option>:null)}</optgroup>)}
+        </select>
+        <div style={{marginTop:8,fontSize:32,textAlign:"center"}}>{g.emoji}</div>
+      </div>
+    </div>
+    <div style={{background:"linear-gradient(135deg,rgba(52,211,153,.12),rgba(52,211,153,.03))",border:"1px solid rgba(52,211,153,.15)",borderRadius:14,padding:24,textAlign:"center",marginBottom:20}}>
+      <div style={{fontSize:14,color:S.dim}}>Working <b style={{color:"white"}}>{hours}h/week</b> on <b style={{color:S.green}}>{p.name}</b></div>
+      <div style={{fontSize:42,fontWeight:700,color:"white",fontFamily:"'JetBrains Mono',monospace",lineHeight:1.1,marginTop:4}}>{wksToGoal<=1?"This week!":wksToGoal<=4?`${wksToGoal} weeks`:wksToGoal<=52?`${Math.round(wksToGoal/4.33)} months`:`${(wksToGoal/52).toFixed(1)} years`}</div>
+      <div style={{fontSize:16,color:S.dim,marginTop:6}}>to buy {g.emoji} <b style={{color:"white"}}>{g.name}</b> <span style={{color:S.subtle}}>(${g.price.toLocaleString()})</span></div>
+      <div style={{marginTop:16,background:"rgba(255,255,255,.06)",borderRadius:20,height:12,overflow:"hidden",maxWidth:400,margin:"16px auto 0"}}><div style={{height:"100%",borderRadius:20,background:`linear-gradient(90deg,${S.green},#6ee7b7)`,width:`${pPct}%`,transition:"width .5s ease"}}/></div>
+      <div style={{fontSize:11,color:S.subtle,marginTop:6}}>${wkN.toLocaleString()}/wk after ~28% self-employment tax</div>
+    </div>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:10,marginBottom:20}}>
+      {[{l:"Weekly (gross)",v:`$${wkG.toLocaleString()}`,s:`${hours}h × $${p.rate}`,c:S.green},{l:"Weekly (net)",v:`$${wkN.toLocaleString()}`,s:"After ~28% tax",c:"#6ee7b7"},{l:"Monthly (net)",v:`$${moN.toLocaleString()}`,s:"4.33 weeks",c:"#7dd3fc"},{l:"Yearly (net)",v:`$${yrN.toLocaleString()}`,s:"52 weeks",c:"#c4b5fd"}].map(c=><div key={c.l} style={{background:S.card,border:`1px solid ${S.border}`,borderRadius:10,padding:14,textAlign:"center"}}><div style={{fontSize:10,color:S.muted,marginBottom:4}}>{c.l}</div><div style={{fontFamily:"'JetBrains Mono',monospace",fontSize:20,fontWeight:700,color:c.c}}>{c.v}</div><div style={{fontSize:10,color:S.subtle,marginTop:2}}>{c.s}</div></div>)}
+    </div>
+    <h4 style={{fontSize:14,fontWeight:600,color:S.text,marginBottom:10}}>🛍️ What ${moN.toLocaleString()}/month buys you:</h4>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(180px,1fr))",gap:8,marginBottom:24}}>
+      {THINGS_TO_BUY.sort((a,b)=>a.price-b.price).map((t,i)=>{const wks=Math.ceil(t.price/(wkN||1));return<div key={t.name} onClick={()=>setGi(THINGS_TO_BUY.indexOf(t))} style={{background:g.name===t.name?"rgba(52,211,153,.1)":S.card,border:`1px solid ${g.name===t.name?"rgba(52,211,153,.2)":S.border}`,borderRadius:8,padding:10,cursor:"pointer",transition:"all .15s"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}><span style={{fontSize:18}}>{t.emoji}</span><span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:wks<=4?S.green:wks<=12?"#fcd34d":S.dim}}>{wks<=1?"< 1wk":wks<=4?`${wks}wk`:`${Math.round(wks/4.33)}mo`}</span></div><div style={{fontSize:12,color:S.text,fontWeight:500,marginTop:4}}>{t.name}</div><div style={{fontSize:10,color:S.subtle}}>${t.price.toLocaleString()}</div></div>})}
+    </div>
+    <h4 style={{fontSize:14,fontWeight:600,color:S.text,marginBottom:10}}>📊 All Platforms Compared ({hours}h/week → {g.emoji} {g.name})</h4>
+    <div style={{background:S.card,border:`1px solid ${S.border}`,borderRadius:10,overflow:"hidden"}}>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 70px 80px 80px 80px",padding:"8px 12px",borderBottom:`1px solid ${S.border}`,fontSize:10,color:S.muted,fontWeight:600}}><span>Platform</span><span style={{textAlign:"right"}}>/hr</span><span style={{textAlign:"right"}}>Wk (net)</span><span style={{textAlign:"right"}}>Mo (net)</span><span style={{textAlign:"right"}}>→ {g.emoji}</span></div>
+      {PLAT_RATES.map((pr,i)=>{const wk=Math.round(hours*pr.rate*.72);const mo=Math.round(wk*4.33);const wks=Math.ceil(g.price/(wk||1));return<div key={pr.name} onClick={()=>setSp(i)} style={{display:"grid",gridTemplateColumns:"1fr 70px 80px 80px 80px",padding:"7px 12px",borderBottom:"1px solid rgba(255,255,255,.02)",fontSize:12,cursor:"pointer",background:sp===i?"rgba(52,211,153,.06)":"transparent"}}><span style={{color:sp===i?S.green:S.text,fontWeight:sp===i?600:400}}>{pr.name}</span><span style={{textAlign:"right",fontFamily:"'JetBrains Mono',monospace",color:S.dim}}>${pr.rate}</span><span style={{textAlign:"right",fontFamily:"'JetBrains Mono',monospace",color:S.text}}>${wk.toLocaleString()}</span><span style={{textAlign:"right",fontFamily:"'JetBrains Mono',monospace",color:"#7dd3fc"}}>${mo.toLocaleString()}</span><span style={{textAlign:"right",fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:wks<=4?S.green:wks<=12?"#fcd34d":S.dim}}>{wks<=1?"<1wk":`${wks}wk`}</span></div>})}
+    </div>
+  </div>);
+}
+ 
 function App(){
   const[tab,setTab]=useState("listings");
   const[repoKey,setRepoKey]=useState(0);
   const switchTab=(t)=>{setTab(t);if(t==="repo")setRepoKey(k=>k+1);};
   return(<div style={{minHeight:"100vh",background:S.bg,color:S.text,fontFamily:"'DM Sans',system-ui,sans-serif"}}>
-    <style>{`@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap');@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:3px}select option{background:#16161a;color:#d4d4d8}*{box-sizing:border-box;margin:0;padding:0}`}</style>
+    <style>{`@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap');@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:3px}select option{background:#16161a;color:#d4d4d8}*{box-sizing:border-box;margin:0;padding:0}input[type=range]{height:6px}`}</style>
     <header style={{borderBottom:`1px solid ${S.border}`,background:"rgba(10,10,12,.92)",backdropFilter:"blur(16px)",position:"sticky",top:0,zIndex:50}}>
       <div style={{maxWidth:1440,margin:"0 auto",padding:"10px 20px"}}>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:8}}>
           <div style={{display:"flex",alignItems:"center",gap:10}}>
             <div style={{width:6,height:6,borderRadius:"50%",background:S.green,animation:"pulse 2s ease-in-out infinite"}}/>
             <h1 style={{fontSize:18,fontWeight:700,color:"white",letterSpacing:"-.01em"}}>Human Data Ops</h1>
-            <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:S.green,background:"rgba(52,211,153,.1)",padding:"2px 8px",borderRadius:4}}>{ROLES.length} listings</span>
-            <span style={{fontSize:11,color:S.muted}}>{ALL_COS.length} companies • Links go to live job boards</span>
+            <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:S.green,background:"rgba(52,211,153,.1)",padding:"2px 8px",borderRadius:4}}>{ROLES.length}</span>
           </div>
-          <div style={{display:"flex",gap:3}}>{[["listings","📋 Listings"],["resume","📄 Match"],["repo","📊 Repo"]].map(([k,l])=><button key={k} onClick={()=>switchTab(k)} style={{padding:"5px 11px",borderRadius:7,border:`1px solid ${tab===k?"rgba(52,211,153,.2)":"rgba(255,255,255,.05)"}`,background:tab===k?"rgba(52,211,153,.1)":"transparent",color:tab===k?"#6ee7b7":"#a1a1aa",fontSize:11,fontWeight:tab===k?600:400,cursor:"pointer",fontFamily:"inherit"}}>{l}</button>)}</div>
+          <div style={{display:"flex",gap:3}}>{[["listings","📋 Listings"],["earnings","💰 Earnings"],["resume","📄 Match"],["repo","📊 Repo"]].map(([k,l])=><button key={k} onClick={()=>switchTab(k)} style={{padding:"5px 11px",borderRadius:7,border:`1px solid ${tab===k?"rgba(52,211,153,.2)":"rgba(255,255,255,.05)"}`,background:tab===k?"rgba(52,211,153,.1)":"transparent",color:tab===k?"#6ee7b7":"#a1a1aa",fontSize:11,fontWeight:tab===k?600:400,cursor:"pointer",fontFamily:"inherit"}}>{l}</button>)}</div>
         </div>
       </div>
     </header>
-    <main style={{maxWidth:1440,margin:"0 auto",padding:"14px 20px 40px"}}>{tab==="listings"&&<ListingsTab/>}{tab==="resume"&&<ResumeTab/>}{tab==="repo"&&<RepoTab key={repoKey}/>}</main>
-    <footer style={{borderTop:`1px solid ${S.border}`,padding:12,textAlign:"center"}}><p style={{fontSize:10,color:S.subtle,maxWidth:700,margin:"0 auto"}}>Pay estimates from public sources (Mar 2026). Verify with each platform. Resume data stored in your browser's localStorage. Matching runs 100% client-side.</p></footer>
+    <main style={{maxWidth:1440,margin:"0 auto",padding:"14px 20px 40px"}}>{tab==="listings"&&<ListingsTab/>}{tab==="earnings"&&<EarningsTab/>}{tab==="resume"&&<ResumeTab/>}{tab==="repo"&&<RepoTab key={repoKey}/>}</main>
+    <footer style={{borderTop:`1px solid ${S.border}`,padding:12,textAlign:"center"}}><p style={{fontSize:10,color:S.subtle,maxWidth:700,margin:"0 auto"}}>Pay estimates from public sources (Mar 2026). Verify with each platform. Resume data in localStorage. Runs 100% client-side.</p></footer>
   </div>);
 }
-
+ 
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script>
 </body>
