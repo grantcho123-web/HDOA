@@ -1,9 +1,8 @@
 {
-  "buildCommand": "echo 'Static site — no build needed'",
-  "outputDirectory": "public",
+  "buildCommand": "",
+  "outputDirectory": ".",
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/:path*" },
-    { "source": "/data/:path*", "destination": "/data/:path*" }
+    { "source": "/api/:path*", "destination": "/api/:path*" }
   ],
   "headers": [
     {
@@ -12,12 +11,6 @@
         { "key": "Cache-Control", "value": "s-maxage=300, stale-while-revalidate=600" },
         { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
-    }
-  ],
-  "crons": [
-    {
-      "path": "/api/freshness",
-      "schedule": "0 6 * * *"
     }
   ]
 }
