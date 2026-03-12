@@ -1,0 +1,10 @@
+{
+  "name": "human-data-ops",
+  "version": "1.0.0",
+  "description": "AI trainer opportunity aggregator with automated freshness checking",
+  "scripts": {
+    "check": "node scripts/check-urls.js",
+    "dev": "npx serve public -l 3000"
+  },
+  "license": "MIT"
+}
