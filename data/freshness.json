@@ -1,348 +1,348 @@
 {
-  "lastRun": "2026-05-15T08:36:25.331Z",
+  "lastRun": "2026-05-16T07:46:06.717Z",
   "totalPlatforms": 42,
   "summary": {
-    "live": 28,
+    "live": 27,
     "changed": 10,
     "down": 1,
     "timeout": 0,
-    "error": 3
+    "error": 4
   },
   "results": {
     "scale": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 74,
+      "responseTimeMs": 56,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:47.971Z",
+      "lastChecked": "2026-05-16T07:45:34.899Z",
       "url": "https://scale.com/careers"
     },
     "outlier": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 177,
+      "responseTimeMs": 228,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:47.988Z",
+      "lastChecked": "2026-05-16T07:45:35.027Z",
       "url": "https://app.outlier.ai/en/expert/opportunities"
     },
     "dataannotation": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 97,
+      "responseTimeMs": 191,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:47.992Z",
+      "lastChecked": "2026-05-16T07:45:35.035Z",
       "url": "https://www.dataannotation.tech"
-    },
-    "mercor": {
-      "status": "live",
-      "httpStatus": 200,
-      "responseTimeMs": 174,
-      "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:48.066Z",
-      "url": "https://work.mercor.com/explore"
     },
     "remotasks": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 188,
+      "responseTimeMs": 212,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:48.164Z",
+      "lastChecked": "2026-05-16T07:45:35.237Z",
       "url": "https://www.remotasks.com"
+    },
+    "mercor": {
+      "status": "live",
+      "httpStatus": 200,
+      "responseTimeMs": 731,
+      "hasExpectedContent": true,
+      "lastChecked": "2026-05-16T07:45:35.572Z",
+      "url": "https://work.mercor.com/explore"
+    },
+    "telus": {
+      "status": "live",
+      "httpStatus": 200,
+      "responseTimeMs": 179,
+      "hasExpectedContent": true,
+      "lastChecked": "2026-05-16T07:45:36.755Z",
+      "url": "https://www.telusdigital.com/careers"
     },
     "micro1": {
       "status": "live",
       "httpStatus": 200,
       "responseTimeMs": 34,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:49.444Z",
+      "lastChecked": "2026-05-16T07:45:36.807Z",
       "url": "https://www.micro1.ai/jobs"
-    },
-    "surge": {
-      "status": "live",
-      "httpStatus": 200,
-      "responseTimeMs": 60,
-      "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:49.467Z",
-      "url": "https://www.surgehq.ai"
     },
     "appen": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 64,
+      "responseTimeMs": 160,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:49.482Z",
+      "lastChecked": "2026-05-16T07:45:36.969Z",
       "url": "https://appen.com"
     },
-    "telus": {
+    "surge": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 320,
+      "responseTimeMs": 71,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:49.500Z",
-      "url": "https://www.telusdigital.com/careers"
+      "lastChecked": "2026-05-16T07:45:36.994Z",
+      "url": "https://www.surgehq.ai"
     },
     "mindrift": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 817,
+      "responseTimeMs": 515,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:50.699Z",
+      "lastChecked": "2026-05-16T07:45:37.416Z",
       "url": "https://mindrift.ai/apply"
     },
     "alignerr": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 119,
+      "responseTimeMs": 180,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:51.876Z",
+      "lastChecked": "2026-05-16T07:45:38.717Z",
       "url": "https://alignerr.com"
-    },
-    "rws": {
-      "status": "live",
-      "httpStatus": 200,
-      "responseTimeMs": 177,
-      "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:52.308Z",
-      "url": "https://www.rws.com/careers"
     },
     "lxt": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 402,
+      "responseTimeMs": 478,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:35:52.322Z",
+      "lastChecked": "2026-05-16T07:45:38.904Z",
       "url": "https://www.lxt.ai"
     },
-    "welocalize": {
-      "status": "error",
-      "httpStatus": 404,
-      "responseTimeMs": 994,
-      "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:35:52.698Z",
-      "url": "https://www.welocalize.com/careers"
+    "rws": {
+      "status": "live",
+      "httpStatus": 200,
+      "responseTimeMs": 223,
+      "hasExpectedContent": true,
+      "lastChecked": "2026-05-16T07:45:39.019Z",
+      "url": "https://www.rws.com/careers"
     },
     "oneforma": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 2368,
+      "responseTimeMs": 733,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:54.072Z",
+      "lastChecked": "2026-05-16T07:45:39.153Z",
       "url": "https://www.oneforma.com"
+    },
+    "welocalize": {
+      "status": "error",
+      "httpStatus": 404,
+      "responseTimeMs": 1232,
+      "hasExpectedContent": false,
+      "lastChecked": "2026-05-16T07:45:39.655Z",
+      "url": "https://www.welocalize.com/careers"
     },
     "openai": {
       "status": "error",
       "httpStatus": 403,
-      "responseTimeMs": 35,
+      "responseTimeMs": 29,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:55.109Z",
+      "lastChecked": "2026-05-16T07:45:40.687Z",
       "url": "https://openai.com/careers"
     },
     "xai": {
       "status": "error",
       "httpStatus": 403,
-      "responseTimeMs": 37,
+      "responseTimeMs": 117,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:35:55.113Z",
+      "lastChecked": "2026-05-16T07:45:40.775Z",
       "url": "https://x.ai/careers"
     },
     "transperfect": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 90,
+      "responseTimeMs": 160,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:55.262Z",
+      "lastChecked": "2026-05-16T07:45:41.049Z",
       "url": "https://www.transperfect.com/careers"
     },
     "deepmind": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 226,
+      "responseTimeMs": 123,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:35:55.840Z",
+      "lastChecked": "2026-05-16T07:45:41.174Z",
       "url": "https://deepmind.google/careers"
     },
     "anthropic": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 5081,
+      "responseTimeMs": 373,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:05.455Z",
+      "lastChecked": "2026-05-16T07:45:42.753Z",
       "url": "https://www.anthropic.com/jobs"
     },
     "cohere": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 73,
+      "responseTimeMs": 150,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:06.538Z",
+      "lastChecked": "2026-05-16T07:45:43.914Z",
       "url": "https://cohere.com/careers"
     },
     "clickworker": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 107,
+      "responseTimeMs": 193,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:36:06.568Z",
+      "lastChecked": "2026-05-16T07:45:43.951Z",
       "url": "https://www.clickworker.com"
     },
     "mturk": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 368,
+      "responseTimeMs": 281,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:06.896Z",
+      "lastChecked": "2026-05-16T07:45:44.040Z",
       "url": "https://www.mturk.com/worker"
-    },
-    "meta": {
-      "status": "live",
-      "httpStatus": 200,
-      "responseTimeMs": 429,
-      "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:07.508Z",
-      "url": "https://www.metacareers.com"
     },
     "toloka": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 832,
+      "responseTimeMs": 486,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:36:08.288Z",
+      "lastChecked": "2026-05-16T07:45:44.696Z",
       "url": "https://toloka.ai"
+    },
+    "meta": {
+      "status": "live",
+      "httpStatus": 200,
+      "responseTimeMs": 463,
+      "hasExpectedContent": true,
+      "lastChecked": "2026-05-16T07:45:44.883Z",
+      "url": "https://www.metacareers.com"
     },
     "pareto": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 126,
+      "responseTimeMs": 115,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:09.418Z",
+      "lastChecked": "2026-05-16T07:45:46.000Z",
       "url": "https://pareto.ai/careers"
+    },
+    "taskverse": {
+      "status": "error",
+      "httpStatus": 403,
+      "responseTimeMs": 119,
+      "hasExpectedContent": true,
+      "lastChecked": "2026-05-16T07:45:46.002Z",
+      "url": "https://taskverse.com"
     },
     "prolific": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 156,
+      "responseTimeMs": 166,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:09.449Z",
+      "lastChecked": "2026-05-16T07:45:46.055Z",
       "url": "https://www.prolific.com"
-    },
-    "braintrust": {
-      "status": "live",
-      "httpStatus": 200,
-      "responseTimeMs": 196,
-      "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:09.520Z",
-      "url": "https://app.usebraintrust.com"
-    },
-    "taskverse": {
-      "status": "live",
-      "httpStatus": 200,
-      "responseTimeMs": 113,
-      "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:09.534Z",
-      "url": "https://taskverse.com"
     },
     "abaka": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 201,
+      "responseTimeMs": 430,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:36:09.551Z",
+      "lastChecked": "2026-05-16T07:45:46.572Z",
       "url": "https://www.abaka.ai/careers"
+    },
+    "braintrust": {
+      "status": "live",
+      "httpStatus": 200,
+      "responseTimeMs": 605,
+      "hasExpectedContent": true,
+      "lastChecked": "2026-05-16T07:45:46.589Z",
+      "url": "https://app.usebraintrust.com"
+    },
+    "stellar": {
+      "status": "live",
+      "httpStatus": 200,
+      "responseTimeMs": 42,
+      "hasExpectedContent": true,
+      "lastChecked": "2026-05-16T07:45:47.632Z",
+      "url": "https://joinstellar.ai"
     },
     "turing": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 79,
+      "responseTimeMs": 115,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:36:10.632Z",
+      "lastChecked": "2026-05-16T07:45:47.706Z",
       "url": "https://www.turing.com/jobs"
     },
     "welo": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 88,
+      "responseTimeMs": 144,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:36:10.646Z",
+      "lastChecked": "2026-05-16T07:45:47.741Z",
       "url": "https://welodata.ai"
     },
     "cloudfactory": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 225,
+      "responseTimeMs": 377,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:36:10.783Z",
+      "lastChecked": "2026-05-16T07:45:47.973Z",
       "url": "https://www.cloudfactory.com"
-    },
-    "stellar": {
-      "status": "live",
-      "httpStatus": 200,
-      "responseTimeMs": 323,
-      "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:10.875Z",
-      "url": "https://joinstellar.ai"
     },
     "sme": {
       "status": "down",
       "httpStatus": 0,
-      "responseTimeMs": 10024,
+      "responseTimeMs": 10018,
       "error": "EAI_AGAIN",
-      "lastChecked": "2026-05-15T08:36:20.576Z",
+      "lastChecked": "2026-05-16T07:45:57.608Z",
       "url": "https://smecareers.com"
     },
     "sama": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 75,
+      "responseTimeMs": 137,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:21.654Z",
+      "lastChecked": "2026-05-16T07:45:58.748Z",
       "url": "https://www.sama.com"
     },
     "opentrain": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 74,
+      "responseTimeMs": 171,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:21.661Z",
+      "lastChecked": "2026-05-16T07:45:58.792Z",
       "url": "https://www.opentrain.ai"
     },
     "handshake": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 108,
+      "responseTimeMs": 188,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:21.695Z",
+      "lastChecked": "2026-05-16T07:45:58.810Z",
       "url": "https://joinhandshake.com"
     },
     "imerit": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 79,
+      "responseTimeMs": 67,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:36:21.796Z",
+      "lastChecked": "2026-05-16T07:45:58.843Z",
       "url": "https://imerit.net"
     },
     "innodata": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 368,
+      "responseTimeMs": 4673,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:36:23.227Z",
+      "lastChecked": "2026-05-16T07:46:04.988Z",
       "url": "https://www.innodata.com"
     },
     "hive": {
       "status": "changed",
       "httpStatus": 200,
-      "responseTimeMs": 47,
+      "responseTimeMs": 67,
       "hasExpectedContent": false,
-      "lastChecked": "2026-05-15T08:36:24.277Z",
+      "lastChecked": "2026-05-16T07:46:06.060Z",
       "url": "https://thehive.ai"
     },
     "pangram": {
       "status": "live",
       "httpStatus": 200,
-      "responseTimeMs": 956,
+      "responseTimeMs": 577,
       "hasExpectedContent": true,
-      "lastChecked": "2026-05-15T08:36:25.331Z",
+      "lastChecked": "2026-05-16T07:46:06.717Z",
       "url": "https://www.pangramlabs.com"
     }
   }
